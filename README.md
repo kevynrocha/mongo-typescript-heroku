@@ -13,7 +13,7 @@ Para obter uma cópia local e funcional, siga essas etapas
 
 1. Clone o repositório
 ```sh
-git clone https://lab.coodesh.com/kevyn_oliver/challenge-20201030.git
+git clone https://github.com/kevynrocha/mongo-typescript-heroku.git
 ```
 2. Entre na pasta do projeto
 ```sh
