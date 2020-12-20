@@ -5,7 +5,7 @@
   </p>
 </p>
 
-https://api-coodesh-challenge.herokuapp.com/api/v1/
+https://api-coodesh-challenge.herokuapp.com/api/v1/products
 
 ## Começando
 
