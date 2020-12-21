@@ -5,6 +5,8 @@
   </p>
 </p>
 
+https://api-coodesh-challenge.herokuapp.com/api/v1/products
+
 ## Começando
 
 Para obter uma cópia local e funcional, siga essas etapas
