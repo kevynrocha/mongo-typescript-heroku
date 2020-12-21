@@ -112,7 +112,7 @@ const cronStart = async () => {
     return true;
   } catch (e) {
     logger.error(e.message);
-    await sendEmail(e.message);
+    sendEmail(e.message);
   }
 };
 
