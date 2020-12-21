@@ -8,12 +8,16 @@ const uri = `mongodb+srv://${DB_SERVER}:${DB_PASSWORD}@coodesh-open-food-facts.p
 const connection = (): void => {
   const connect = () => {
     mongoose
-      .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+      .connect(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+      })
       .then(() => {
         return logger.info('Successfully connected to database!');
       })
       .catch(e => {
-        logger.error('Error connecting to database: ', e);
+        logger.error('Error connecting to database: ', e.message);
         return process.exit(1);
       });
   };

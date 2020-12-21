@@ -52,8 +52,7 @@ const update = async (req: Request, res: Response): Promise<Response> => {
     const params = req.params;
     const code = Number(params.code);
 
-    const product = await Product.updateOne({ code }, newProduct);
-
+    const product = await Product.findOneAndUpdate({ code }, newProduct);
     if (!product) {
       throw new Error('No products found.');
     }
@@ -73,7 +72,10 @@ const destroy = async (req: Request, res: Response): Promise<Response> => {
   const code = Number(params.code);
 
   try {
-    const product = await Product.updateOne({ code }, { status: 'trash' });
+    const product = await Product.findOneAndUpdate(
+      { code },
+      { status: 'trash' },
+    );
 
     if (!product) {
       throw new Error('Product does not exist.');
@@ -82,9 +84,9 @@ const destroy = async (req: Request, res: Response): Promise<Response> => {
     return res.status(200).json({
       success: true,
     });
-  } catch (error) {
-    return res.status(error.statusCode).json({
-      error: error.message,
+  } catch (e) {
+    return res.status(400).json({
+      error: e.message,
     });
   }
 };
