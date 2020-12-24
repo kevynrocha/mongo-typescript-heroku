@@ -90,7 +90,7 @@ const createValidProduct = (products: ProductInterface[]) => {
   return formattedProduct;
 };
 
-const cronStart = async () => {
+export const cronStart = async (): Promise<boolean | undefined> => {
   try {
     let allProducts: Partial<ProductInterface>[] = [];
     const { filenames, formattedFilenames } = await getFilenames();

@@ -1,13 +1,14 @@
 import { Router } from 'express';
 
-import job from '../jobs/productsJob';
+import { cronStart } from '../jobs/productsJob';
 
 const router = Router();
 
 router.get('/', (req, res) => {
-  job.start();
+  cronStart();
+
   return res.json({
-    message: 'Running job',
+    message: 'Running job...',
   });
 });
 
