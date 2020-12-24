@@ -116,7 +116,7 @@ const cronStart = async () => {
   }
 };
 
-const everyDayAtMidnight = '15 02 * * *';
+const everyDayAtMidnight = '20 02 * * *';
 
 const job = new CronJob(everyDayAtMidnight, cronStart, null, true);
 
